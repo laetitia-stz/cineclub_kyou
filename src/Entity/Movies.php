@@ -8,6 +8,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 #[ORM\Entity(repositoryClass: MoviesRepository::class)]
 class Movies
 {
@@ -18,6 +21,9 @@ class Movies
 
     #[ORM\Column(length: 200, nullable: true)]
     private ?string $poster = null;
+
+    #[Vich\UploadableField(mapping: 'uploads', fileNameProperty: 'poster')]
+    private ?File $posterFile = null;
 
     #[ORM\Column(length: 250, nullable: true)]
     private ?string $french_title = null;
@@ -87,6 +93,16 @@ class Movies
         $this->poster = $poster;
 
         return $this;
+    }
+
+    public function setPosterFile(?File $posterfile = null): void
+    {
+        $this->posterFile = $posterfile;
+    }
+
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
     }
 
     public function getFrenchTitle(): ?string
