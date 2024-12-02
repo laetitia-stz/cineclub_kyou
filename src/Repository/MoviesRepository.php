@@ -19,6 +19,18 @@ class MoviesRepository extends ServiceEntityRepository
     //    /**
     //     * @return Movies[] Returns an array of Movies objects
     //     */
+
+    public function getLastInserted($amount): array
+    {
+        return $this->createQueryBuilder('m')
+            ->orderBy('m.id', 'DESC')
+            ->setMaxResults($amount)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+
     //    public function findByExampleField($value): array
     //    {
     //        return $this->createQueryBuilder('m')
@@ -31,7 +43,7 @@ class MoviesRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Movies
+        //    public function findOneBySomeField($value): ?Movies
     //    {
     //        return $this->createQueryBuilder('m')
     //            ->andWhere('m.exampleField = :val')
