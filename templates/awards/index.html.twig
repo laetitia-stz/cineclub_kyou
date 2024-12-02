@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Awards index{% endblock %}
+
+{% block body %}
+        <main class="main"> 
+    <h1>Awards index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Award_name</th>
+                <th>Award_year</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for award in awards %}
+            <tr>
+                <td>{{ award.id }}</td>
+                <td>{{ award.awardName }}</td>
+                <td>{{ award.awardYear }}</td>
+                <td>
+                    <a href="{{ path('app_awards_show', {'id': award.id}) }}">show</a>
+                    <a href="{{ path('app_awards_edit', {'id': award.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_awards_new') }}">Create new</a>
+    </main>    
+{% endblock %}

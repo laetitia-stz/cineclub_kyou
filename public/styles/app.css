@@ -1,0 +1,78 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.headband {
+    text-align: center;
+}
+
+.headband img{ 
+    width: 100%;
+}
+
+.nav-ul {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    list-style: none;          /* Supprime les puces */
+    display: flex;             /* Utilise Flexbox pour aligner horizontalement */
+    justify-content: center;   /* Centre les éléments horizontalement */
+    margin:0;
+    font-size: 1.2em;
+}
+
+.nav-item {
+    margin: 0.5em 2em; 
+}
+
+.nav-link {
+    text-decoration: none;     /* Supprime le soulignement des liens */
+    color:  #fff;         
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ccc;        /* Change la couleur au survol pour donner un effet visuel */
+}
+
+.main { 
+    flex: 1; /* Assure que le main occupe tout l'espace disponiblee */
+    background-image: url("../images/background.jpg");
+    background-size: cover;  /* L'image de fond couvre toute la zone du main */
+    background-position: center;  /* Centrer l'image de fond */
+    background-repeat: no-repeat;  /* Évite la répétition de l'image */
+}
+
+.footer { 
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.nav-btn-login,
+.nav-adminName,
+.nav-btn-logout { 
+    color: white;
+    border: none;
+    margin: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+

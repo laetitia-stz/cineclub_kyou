@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Awards{% endblock %}
+
+{% block body %}
+    <main class="main"> 
+    <h1>Awards</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ award.id }}</td>
+            </tr>
+            <tr>
+                <th>Award_name</th>
+                <td>{{ award.awardName }}</td>
+            </tr>
+            <tr>
+                <th>Award_year</th>
+                <td>{{ award.awardYear }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_awards_index') }}">back to list</a>
+
+    <a href="{{ path('app_awards_edit', {'id': award.id}) }}">edit</a>
+
+    {{ include('awards/_delete_form.html.twig') }}
+    </main>
+{% endblock %}

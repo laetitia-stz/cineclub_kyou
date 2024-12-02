@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compositeurs{% endblock %}
+
+{% block body %}
+    <main class="main"> 
+    <h1>Liste des Compositeurs</h1>
+    <ul>
+        {% for composer in composers %}
+            <li>{{ composer.firstname }} {{ composer.lastname }}</li>
+        {% endfor %}
+    </ul>
+    </main>
+{% endblock %}

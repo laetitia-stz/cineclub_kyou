@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réalisateurs{% endblock %}
+
+{% block body %}
+    <main class="main"> 
+    <h1>Liste des Réalisateurs</h1>
+    <ul>
+        {% for director in directors %}
+            <li>{{ director.firstname }} {{ director.lastname }}</li>
+        {% endfor %}
+    </ul>
+    </main>
+{% endblock %}

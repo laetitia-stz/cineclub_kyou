@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Awards{% endblock %}
+
+{% block body %}
+    <main class="main"> 
+    <h1>Edit Awards</h1>
+
+    {{ include('awards/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_awards_index') }}">back to list</a>
+
+    {{ include('awards/_delete_form.html.twig') }}
+    </main>
+{% endblock %}

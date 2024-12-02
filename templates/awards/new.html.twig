@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Awards{% endblock %}
+
+{% block body %}
+    <main class="main"> 
+    <h1>Create new Awards</h1>
+
+    {{ include('awards/_form.html.twig') }}
+
+    <a href="{{ path('app_awards_index') }}">back to list</a>
+    </main>
+{% endblock %}
